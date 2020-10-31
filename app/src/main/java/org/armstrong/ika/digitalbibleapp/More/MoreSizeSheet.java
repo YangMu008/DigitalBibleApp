@@ -120,6 +120,9 @@ public class MoreSizeSheet extends BottomSheetDialogFragment {
                 }
 
                 MoreFragment.getInstance().updateMoreRecyclerView(size);
+                // update more activity title
+                MoreActivity.getInstance().updateTextOneSize();
+
 
             }
 

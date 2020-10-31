@@ -15,8 +15,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.armstrong.ika.digitalbibleapp.Common.Utils;
-import org.armstrong.ika.digitalbibleapp.CompletedDb.CompletedEntities;
-import org.armstrong.ika.digitalbibleapp.CompletedDb.CompletedRepository;
+import org.armstrong.ika.digitalbibleapp.Completed.DB.CompletedEntities;
+import org.armstrong.ika.digitalbibleapp.Completed.DB.CompletedRepository;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
 

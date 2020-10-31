@@ -21,21 +21,21 @@ import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkEntities;
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkRepository;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkEntities;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkRepository;
 import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
 import org.armstrong.ika.digitalbibleapp.Common.Utils;
 import org.armstrong.ika.digitalbibleapp.Compare.CompareSheet;
 import org.armstrong.ika.digitalbibleapp.Completed.CompletedSheet;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightRepository;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightRepository;
 import org.armstrong.ika.digitalbibleapp.MainActivity;
 import org.armstrong.ika.digitalbibleapp.Notes.NoteActivity;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public class MainSheet extends BottomSheetDialogFragment {
     private RecyclerView recyclerView;
     private MainSheetAdapter mainSheetAdapter;
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionsRepository;
 
     protected HighlightRepository highlightRepository;
 
@@ -66,7 +66,7 @@ public class MainSheet extends BottomSheetDialogFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        versionRepository = new VersionRepository(getContext());
+        versionsRepository = new VersionsRepository(getContext());
 
         bookmarkRepository = new BookmarkRepository(getContext());
 
@@ -125,7 +125,7 @@ public class MainSheet extends BottomSheetDialogFragment {
 
                         dismiss();
 
-                        int av_count = versionRepository.countActiveVersions();
+                        int av_count = versionsRepository.countActiveVersions();
 
                         if (av_count < 2) {
 

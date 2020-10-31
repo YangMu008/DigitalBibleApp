@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import org.armstrong.ika.digitalbibleapp.BiblesDb.BiblesRepository;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 public class DataProvider extends ContentProvider {
 
@@ -18,14 +18,14 @@ public class DataProvider extends ContentProvider {
     static final String URL = "content://" + PROVIDER_NAME;
     static final Uri CONTENT_URI = Uri.parse(URL);
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionRepository;
 
     protected BiblesRepository biblesRepository;
 
     @Override
     public boolean onCreate() {
 
-        versionRepository = new VersionRepository(getContext());
+        versionRepository = new VersionsRepository(getContext());
 
         biblesRepository = new BiblesRepository(getContext());
 

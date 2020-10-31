@@ -5,6 +5,7 @@ import android.app.Dialog;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -14,8 +15,8 @@ import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionEntities;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionViewModel;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsEntities;
+import org.armstrong.ika.digitalbibleapp.Versions.VersionsViewModel;
 
 import java.util.List;
 
@@ -29,12 +30,12 @@ public class ActiveSheet extends BottomSheetDialogFragment {
 
     PreferenceProvider preferenceProvider;
 
-    private VersionViewModel versionViewModel;
+    private VersionsViewModel versionViewModel;
 
     private RecyclerView recyclerView;
     private ActiveFragmentAdapter activeFragmentAdapter;
 
-    private List<VersionEntities> values;
+    private List<VersionsEntities> values;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,11 +67,11 @@ public class ActiveSheet extends BottomSheetDialogFragment {
         recyclerView.addItemDecoration(new DividerLineDecoration(getActivity(), LinearLayoutManager.VERTICAL, 16));
         recyclerView.setAdapter(activeFragmentAdapter);
 
-        versionViewModel = ViewModelProviders.of(getActivity()).get(VersionViewModel.class);
+        versionViewModel = ViewModelProviders.of(getActivity()).get(VersionsViewModel.class);
 
-        versionViewModel.getActiveVersions(version).observe(getActivity(), new Observer<List<VersionEntities>>() {
+        versionViewModel.getActiveVersions(version).observe(getActivity(), new Observer<List<VersionsEntities>>() {
             @Override
-            public void onChanged(List<VersionEntities> versionEntities) {
+            public void onChanged(List<VersionsEntities> versionEntities) {
                 activeFragmentAdapter.setValues(versionEntities);
                 values = versionEntities;
             }
@@ -84,7 +85,7 @@ public class ActiveSheet extends BottomSheetDialogFragment {
 
                 dismiss();
 
-                final VersionEntities versionEntities = values.get(position);
+                final VersionsEntities versionEntities = values.get(position);
 
                 preferenceProvider.setVersion(versionEntities.getNumber());
 

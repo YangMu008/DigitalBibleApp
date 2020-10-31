@@ -21,8 +21,8 @@ import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.LangKeyDb.LangRepository;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionEntities;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsEntities;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class CompareSheet extends BottomSheetDialogFragment {
 
     PreferenceProvider preferenceProvider;
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionRepository;
     protected LangRepository langRepository;
     protected BiblesRepository biblesRepository;
 
@@ -40,7 +40,7 @@ public class CompareSheet extends BottomSheetDialogFragment {
 
     CompareModel compareModel;
 
-    List<VersionEntities> allCompareVersions;
+    List<VersionsEntities> allCompareVersions;
 
     final List<CompareModel> compareModels = new ArrayList<>();
 
@@ -57,7 +57,7 @@ public class CompareSheet extends BottomSheetDialogFragment {
 
         langRepository = new LangRepository(new Application());
 
-        versionRepository = new VersionRepository(getContext());
+        versionRepository = new VersionsRepository(getContext());
 
         biblesRepository = new BiblesRepository(getContext());
         biblesRepository.initialize(versionVars[0]);
@@ -108,9 +108,9 @@ public class CompareSheet extends BottomSheetDialogFragment {
                 = new GetAllCompareVersions(versionVars[0]);
 
         // loop
-        for (VersionEntities versionEntities : allCompareVersions = getAllCompareVersions.getVersions()) {
+        for (VersionsEntities versionsEntities : allCompareVersions = getAllCompareVersions.getVersions()) {
 
-            int version = versionEntities.getNumber();
+            int version = versionsEntities.getNumber();
 
             biblesRepository.initialize(version);
 
@@ -146,7 +146,7 @@ public class CompareSheet extends BottomSheetDialogFragment {
             this.num = num;
         }
 
-        public List<VersionEntities> getVersions() {
+        public List<VersionsEntities> getVersions() {
             return versionRepository.getCompareVersions(num);
         }
 

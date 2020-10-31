@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 
 import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
 
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightRepository;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightViewModel;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightRepository;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightViewModel;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
 

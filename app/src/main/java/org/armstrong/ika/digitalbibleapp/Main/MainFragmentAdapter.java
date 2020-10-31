@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.armstrong.ika.digitalbibleapp.BiblesDb.BiblesEntities;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
 import org.armstrong.ika.digitalbibleapp.NotesDb.NotesEntities;
 import org.armstrong.ika.digitalbibleapp.R;
 

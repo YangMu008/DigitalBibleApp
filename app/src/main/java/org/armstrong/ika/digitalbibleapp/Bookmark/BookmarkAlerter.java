@@ -14,7 +14,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkRepository;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkRepository;
 
 import org.armstrong.ika.digitalbibleapp.Common.Utils;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;

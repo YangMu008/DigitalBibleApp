@@ -34,7 +34,7 @@ import org.armstrong.ika.digitalbibleapp.Main.MainNotice;
 import org.armstrong.ika.digitalbibleapp.More.MoreActivity;
 import org.armstrong.ika.digitalbibleapp.Reference.ReferenceActivity;
 import org.armstrong.ika.digitalbibleapp.Searches.SearchesActivity;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected PreferenceProvider preferenceProvider;
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionRepository;
 
     private ViewPager vpPager;
     private FragmentPagerAdapter fragmentPageAdapter;
@@ -82,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
         versionVars = preferenceProvider.getVersionVars();
 
         // init databases
-        versionRepository = new VersionRepository(this);
+        versionRepository = new VersionsRepository(this);
 
         biblesRepository = new BiblesRepository(this);
-        biblesRepository.initialize(versionVars[0]);
+        biblesRepository.initialize(versionVars[0]);  // init KJV
 
         langRepository = new LangRepository(this);
 

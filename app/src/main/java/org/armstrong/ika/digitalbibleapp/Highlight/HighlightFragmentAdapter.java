@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
 import org.armstrong.ika.digitalbibleapp.R;
 
 import java.util.Collections;

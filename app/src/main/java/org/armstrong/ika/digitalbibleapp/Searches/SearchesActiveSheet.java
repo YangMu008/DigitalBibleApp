@@ -14,8 +14,8 @@ import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionEntities;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionViewModel;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsEntities;
+import org.armstrong.ika.digitalbibleapp.Versions.VersionsViewModel;
 
 import java.util.List;
 
@@ -29,12 +29,12 @@ public class SearchesActiveSheet extends BottomSheetDialogFragment {
 
     PreferenceProvider preferenceProvider;
 
-    private VersionViewModel versionViewModel;
+    private VersionsViewModel versionsViewModel;
 
     private RecyclerView recyclerView;
     private ActiveFragmentAdapter activeFragmentAdapter;
 
-    private List<VersionEntities> values;
+    private List<VersionsEntities> values;
     private int textSize;
 
     @Override
@@ -73,13 +73,13 @@ public class SearchesActiveSheet extends BottomSheetDialogFragment {
         recyclerView.addItemDecoration(new DividerLineDecoration(getActivity(), LinearLayoutManager.VERTICAL, 16));
         recyclerView.setAdapter(activeFragmentAdapter);
 
-        versionViewModel = ViewModelProviders.of(getActivity()).get(VersionViewModel.class);
+        versionsViewModel = ViewModelProviders.of(getActivity()).get(VersionsViewModel.class);
 
-        versionViewModel.getActiveVersions(version).observe(getActivity(), new Observer<List<VersionEntities>>() {
+        versionsViewModel.getActiveVersions(version).observe(getActivity(), new Observer<List<VersionsEntities>>() {
             @Override
-            public void onChanged(List<VersionEntities> versionEntities) {
-                activeFragmentAdapter.setValues(versionEntities);
-                values = versionEntities;
+            public void onChanged(List<VersionsEntities> versionsEntities) {
+                activeFragmentAdapter.setValues(versionsEntities);
+                values = versionsEntities;
             }
         });
 
@@ -91,9 +91,9 @@ public class SearchesActiveSheet extends BottomSheetDialogFragment {
 
                 dismiss();
 
-                final VersionEntities versionEntities = values.get(position);
+                final VersionsEntities versionsEntities = values.get(position);
 
-                preferenceProvider.setVersion(versionEntities.getNumber());
+                preferenceProvider.setVersion(versionsEntities.getNumber());
 
                 getActivity().finish();
                 startActivity(getActivity().getIntent());

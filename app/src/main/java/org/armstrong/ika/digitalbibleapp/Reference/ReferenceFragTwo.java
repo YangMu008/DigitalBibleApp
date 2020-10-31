@@ -13,7 +13,6 @@ import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
 
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionDatabase;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -27,8 +26,6 @@ public class ReferenceFragTwo extends Fragment {
 
     private RecyclerView recyclerView;
     private ReferenceFragTwoAdapter referenceFragTwoAdapter;
-
-    protected VersionDatabase versionDatabase;
 
     protected BiblesRepository biblesRepository;
 
@@ -55,8 +52,6 @@ public class ReferenceFragTwo extends Fragment {
 
         biblesRepository = new BiblesRepository(getContext());
         biblesRepository.initialize(versionVars[0]);
-
-        versionDatabase = VersionDatabase.getInstance(getContext());
 
         chapter = preferenceProvider.getChapter();
         textSize = preferenceProvider.gettextSizeVar();

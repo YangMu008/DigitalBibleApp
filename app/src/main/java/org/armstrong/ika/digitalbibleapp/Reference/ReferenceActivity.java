@@ -22,7 +22,7 @@ import org.armstrong.ika.digitalbibleapp.LangKeyDb.LangRepository;
 import org.armstrong.ika.digitalbibleapp.MainActivity;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 public class ReferenceActivity extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class ReferenceActivity extends AppCompatActivity {
 
     PreferenceProvider preferenceProvider;
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionsRepository;
     protected LangRepository langRepository;
 
     public static TextView textOne;
@@ -59,13 +59,13 @@ public class ReferenceActivity extends AppCompatActivity {
         int[] versionVars = preferenceProvider.getVersionVars();
 
         // init database
-        versionRepository = new VersionRepository(this);
+        versionsRepository = new VersionsRepository(this);
 
         version = versionVars[0];
         book = versionVars[1];
         chapter = versionVars[2];
 
-        lang = versionRepository.getLangFromNumber(version); // lang
+        lang = versionsRepository.getLangFromNumber(version); // lang
 
         preferenceProvider.setLanguageCode(lang);
 

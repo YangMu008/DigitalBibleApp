@@ -1,6 +1,7 @@
 package org.armstrong.ika.digitalbibleapp.Bookmark;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkRepository;
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkEntities;
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkViewModel;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkRepository;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkEntities;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkViewModel;
 import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
@@ -128,6 +129,13 @@ public class BookmarkFragment extends Fragment {
 
                 BookmarkSheet bookmarkSheet = new BookmarkSheet();
                 bookmarkSheet.show(getActivity().getSupportFragmentManager(), "bookmarkSheet");
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        bookmarkSheet.dismiss();
+                    }
+                }, 5000);
 
             }
 

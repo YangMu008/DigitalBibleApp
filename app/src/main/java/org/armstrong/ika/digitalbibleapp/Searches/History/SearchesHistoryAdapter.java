@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.SearchesDb.SearchesEntities;
+import org.armstrong.ika.digitalbibleapp.Searches.DB.SearchesEntities;
 
 import java.util.List;
 

@@ -30,7 +30,7 @@ import org.armstrong.ika.digitalbibleapp.MainActivity;
 import org.armstrong.ika.digitalbibleapp.Notes.NotesActivity;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.Version.VersionSheet;
+import org.armstrong.ika.digitalbibleapp.Versions.VersionsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,15 +129,8 @@ public class MoreFragment extends Fragment {
 
                     case 0: // Activate/Deactivate Versions
 
-                        final VersionSheet versionSheet = new VersionSheet();
-                        versionSheet.show(getActivity().getSupportFragmentManager(), "versionSheet");
-
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                versionSheet.dismiss();
-                            }
-                        }, 20000);
+                        Intent versionsActivity = new Intent(getActivity(), VersionsActivity.class);
+                        startActivity(versionsActivity);
 
                         break;
 
@@ -145,12 +138,14 @@ public class MoreFragment extends Fragment {
 
                         Intent highlightActivity = new Intent(getActivity(), HighlightActivity.class);
                         startActivity(highlightActivity);
+
                         break;
 
                     case 2: // Notes
 
                         Intent notesActivity = new Intent(getActivity(), NotesActivity.class);
                         startActivity(notesActivity);
+
                         break;
 
                     case 3: // Completed

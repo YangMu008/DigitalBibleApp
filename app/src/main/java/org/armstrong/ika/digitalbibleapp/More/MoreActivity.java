@@ -199,9 +199,8 @@ public class MoreActivity extends AppCompatActivity {
         preferenceProvider.setColor(selectedColor);
     }
 
-    public void updateLangTextOne(String lang) {
-
-        textOne.setText(R.string.more);
+    public void updateTextOneSize() {
+        textOne.setTextSize(preferenceProvider.getActionBarTextSizeVar());
     }
 
     @Override

@@ -106,7 +106,7 @@ public class NotesFragment extends Fragment {
                 preferenceProvider.setNoteVars(noteVars);
 
                 final NotesSheet notesSheet = new NotesSheet();
-                notesSheet.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), "notesSheet");
+                notesSheet.show(getActivity().getSupportFragmentManager(), "notesSheet");
 
                 new Handler().postDelayed(new Runnable() {
                     @Override

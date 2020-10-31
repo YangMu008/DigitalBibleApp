@@ -17,7 +17,7 @@ import org.armstrong.ika.digitalbibleapp.MainActivity;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class BookmarkSheet extends BottomSheetDialogFragment {
 
     PreferenceProvider preferenceProvider;
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionsRepository;
 
     private RecyclerView recyclerView;
     private BookmarkSheetAdapter bookmarkSheetAdapter;
@@ -48,7 +48,7 @@ public class BookmarkSheet extends BottomSheetDialogFragment {
         preferenceProvider = new PreferenceProvider(getContext());
         version = preferenceProvider.getVersion();
 
-        versionRepository = new VersionRepository(getContext());
+        versionsRepository = new VersionsRepository(getContext());
 
     }
 
@@ -93,7 +93,7 @@ public class BookmarkSheet extends BottomSheetDialogFragment {
                         dismiss();
 
                         // make version active
-                        versionRepository.setVersionActive(1, version); // active, version
+                        versionsRepository.setVersionActive(1, version); // active, version
 
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);

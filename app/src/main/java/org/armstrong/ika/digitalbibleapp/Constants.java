@@ -19,5 +19,6 @@ final public class Constants {
     public static final String UKJV_DATABASE_NAME = "ukjv.db"; // 7 updated
     public static final String WEBBE_DATABASE_NAME = "webbe.db"; // 8 updated
     public static final String AFR83_DATABASE_NAME = "afr83.db"; // 9 updated
+    public static final String ASV_DATABASE_NAME = "asv.db";
 
 }

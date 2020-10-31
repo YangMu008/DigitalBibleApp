@@ -16,8 +16,8 @@ import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 
 import org.armstrong.ika.digitalbibleapp.Common.Utils;
 
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightRepository;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightRepository;
 import org.armstrong.ika.digitalbibleapp.LangKeyDb.LangRepository;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;

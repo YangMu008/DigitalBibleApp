@@ -26,13 +26,12 @@ import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
 import org.armstrong.ika.digitalbibleapp.Common.Utils;
 
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightRepository;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightRepository;
 import org.armstrong.ika.digitalbibleapp.MainActivity;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
-
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +40,7 @@ public class HighlightSheet extends BottomSheetDialogFragment {
 
     PreferenceProvider preferenceProvider;
 
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionsRepository;
     protected HighlightRepository highlightRepository;
 
     private RecyclerView recyclerView;
@@ -63,7 +62,7 @@ public class HighlightSheet extends BottomSheetDialogFragment {
         highlightVars = preferenceProvider.getHighlightVars();
         version = preferenceProvider.getVersion();
 
-        versionRepository = new VersionRepository(getContext());
+        versionsRepository = new VersionsRepository(getContext());
 
     }
 
@@ -116,7 +115,7 @@ public class HighlightSheet extends BottomSheetDialogFragment {
                         dismiss();
 
                         // make version active
-                        versionRepository.setVersionActive(1, version);// active, version
+                        versionsRepository.setVersionActive(1, version);// active, version
 
                         int[] IntItems = {
                                 highlightVars[1],

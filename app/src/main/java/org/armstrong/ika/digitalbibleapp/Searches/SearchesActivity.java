@@ -28,9 +28,9 @@ import org.armstrong.ika.digitalbibleapp.R;
 import org.armstrong.ika.digitalbibleapp.Searches.Area.SearchesAreaSheet;
 import org.armstrong.ika.digitalbibleapp.Searches.History.SearchesHistoryFragment;
 
-import org.armstrong.ika.digitalbibleapp.SearchesDb.SearchesEntities;
-import org.armstrong.ika.digitalbibleapp.SearchesDb.SearchesRepository;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionRepository;
+import org.armstrong.ika.digitalbibleapp.Searches.DB.SearchesEntities;
+import org.armstrong.ika.digitalbibleapp.Searches.DB.SearchesRepository;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsRepository;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -42,7 +42,7 @@ public class SearchesActivity extends AppCompatActivity {
     private PreferenceProvider preferenceProvider;
 
     protected SearchesRepository searchesRepository;
-    protected VersionRepository versionRepository;
+    protected VersionsRepository versionsRepository;
 
     private TextView textOne, textTwo;
 
@@ -73,11 +73,11 @@ public class SearchesActivity extends AppCompatActivity {
         searchesRepository = new SearchesRepository(this);
         searchesRepository.deleteSearchesByDate(Utils.calculateOffset());
 
-        versionRepository = new VersionRepository(this);
+        versionsRepository = new VersionsRepository(this);
 
-        lang = versionRepository.getLangFromNumber(version); // lang
+        lang = versionsRepository.getLangFromNumber(version); // lang
 
-        abbreviation = versionRepository.getAbbreviation(version); // KJV
+        abbreviation = versionsRepository.getAbbreviation(version); // KJV
 
         // search view
         searchView = findViewById(R.id.searchesInput);
@@ -178,7 +178,7 @@ public class SearchesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int av_count = versionRepository.countActiveVersions();
+                int av_count = versionsRepository.countActiveVersions();
 
                 if (av_count > 1) {
 

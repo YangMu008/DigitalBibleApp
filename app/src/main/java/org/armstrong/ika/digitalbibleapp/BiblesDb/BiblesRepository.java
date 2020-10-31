@@ -92,6 +92,10 @@ public class BiblesRepository {
                 Doa = DatabaseAFR83.getInstance(context).biblesDoa();
                 lang = "afr";
                 break;
+            case 10:
+                Doa = DatabaseASV.getInstance(context).biblesDoa();
+                lang = "eng";
+                break;
         }
 
         return Doa;

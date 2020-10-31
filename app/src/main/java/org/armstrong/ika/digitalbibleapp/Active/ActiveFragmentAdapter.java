@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.armstrong.ika.digitalbibleapp.R;
-import org.armstrong.ika.digitalbibleapp.VerKeyDb.VersionEntities;
+import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsEntities;
 
 import java.util.Collections;
 import java.util.List;
 
 public class ActiveFragmentAdapter extends RecyclerView.Adapter<ActiveFragmentAdapter.CustomViewHolder> {
 
-    private List<VersionEntities> values = Collections.emptyList(); //cached copy
+    private List<VersionsEntities> values = Collections.emptyList(); //cached copy
     private int TextSize;
 
     public ActiveFragmentAdapter(int textsize) {
@@ -37,7 +37,7 @@ public class ActiveFragmentAdapter extends RecyclerView.Adapter<ActiveFragmentAd
     @Override
     public void onBindViewHolder(CustomViewHolder customViewHolder, int position) {
 
-        final VersionEntities versionModel = values.get(position);
+        final VersionsEntities versionModel = values.get(position);
 
         customViewHolder.active_name.setText(versionModel.getVerName());
         customViewHolder.active_name.setTextSize(TextSize);
@@ -57,7 +57,7 @@ public class ActiveFragmentAdapter extends RecyclerView.Adapter<ActiveFragmentAd
 
     }
 
-    public void setValues(List<VersionEntities> values){
+    public void setValues(List<VersionsEntities> values){
         this.values = values;
         notifyDataSetChanged();
     }

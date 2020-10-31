@@ -11,9 +11,9 @@ import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
-import org.armstrong.ika.digitalbibleapp.SearchesDb.SearchesEntities;
+import org.armstrong.ika.digitalbibleapp.Searches.DB.SearchesEntities;
 import org.armstrong.ika.digitalbibleapp.Searches.SearchesActivity;
-import org.armstrong.ika.digitalbibleapp.SearchesDb.SearchesRepository;
+import org.armstrong.ika.digitalbibleapp.Searches.DB.SearchesRepository;
 
 import java.util.List;
 

@@ -15,7 +15,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.armstrong.ika.digitalbibleapp.BiblesDb.BiblesEntities;
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
 import org.armstrong.ika.digitalbibleapp.LangKeyDb.LangRepository;
 import org.armstrong.ika.digitalbibleapp.R;
 
@@ -53,9 +53,7 @@ public class SearchesFragmentAdapter extends RecyclerView.Adapter<SearchesFragme
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.searches_item, viewGroup, false);
 
-        CustomViewHolder viewHolder = new CustomViewHolder((view));
-
-        return viewHolder;
+        return new CustomViewHolder((view));
     }
 
     @Override

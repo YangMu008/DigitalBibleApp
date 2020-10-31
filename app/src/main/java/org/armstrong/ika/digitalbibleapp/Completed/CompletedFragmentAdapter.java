@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.armstrong.ika.digitalbibleapp.CompletedDb.CompletedEntities;
+import org.armstrong.ika.digitalbibleapp.Completed.DB.CompletedEntities;
 import org.armstrong.ika.digitalbibleapp.R;
 
 import java.util.Collections;

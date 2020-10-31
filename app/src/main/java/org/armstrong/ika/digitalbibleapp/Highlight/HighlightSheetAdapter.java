@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.armstrong.ika.digitalbibleapp.HightlightDb.HighlightEntities;
+import org.armstrong.ika.digitalbibleapp.Highlight.DB.HighlightEntities;
 import org.armstrong.ika.digitalbibleapp.R;
 
 import java.util.List;

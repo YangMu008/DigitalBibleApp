@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.flask.colorpicker.ColorPickerView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkEntities;
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkRepository;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkEntities;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkRepository;
 import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.Common.Menu.MenuItemsAdapter;
 import org.armstrong.ika.digitalbibleapp.Common.MenuItemsModel;

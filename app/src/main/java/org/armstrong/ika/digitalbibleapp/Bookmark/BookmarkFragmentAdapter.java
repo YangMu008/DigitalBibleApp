@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.armstrong.ika.digitalbibleapp.BookmarkDb.BookmarkEntities;
+import org.armstrong.ika.digitalbibleapp.Bookmark.DB.BookmarkEntities;
 import org.armstrong.ika.digitalbibleapp.R;
 
 import java.util.Collections;

@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.armstrong.ika.digitalbibleapp.Common.DividerLineDecoration;
 import org.armstrong.ika.digitalbibleapp.Common.RecyclerTouchListener;
 import org.armstrong.ika.digitalbibleapp.Common.Utils;
-import org.armstrong.ika.digitalbibleapp.CompletedDb.CompletedEntities;
-import org.armstrong.ika.digitalbibleapp.CompletedDb.CompletedRepository;
-import org.armstrong.ika.digitalbibleapp.CompletedDb.CompletedViewModel;
+import org.armstrong.ika.digitalbibleapp.Completed.DB.CompletedEntities;
+import org.armstrong.ika.digitalbibleapp.Completed.DB.CompletedRepository;
+import org.armstrong.ika.digitalbibleapp.Completed.DB.CompletedViewModel;
 import org.armstrong.ika.digitalbibleapp.PreferenceProvider;
 import org.armstrong.ika.digitalbibleapp.R;
 
