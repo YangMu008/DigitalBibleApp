@@ -114,7 +114,7 @@ public class PreferenceProvider {
 
     public int getBook() {
 
-        return sharedPreferences.getInt("book", 1);
+        return sharedPreferences.getInt("book", 43);
     }
 
     public void setVerse(int pos) {

@@ -250,7 +250,7 @@ public class MoreFragment extends Fragment {
                         shareIntent.putExtra(Intent.EXTRA_SUBJECT, subj);
                         shareIntent.putExtra(Intent.EXTRA_TEXT, sb.toString());
 
-                        Intent intent = Intent.createChooser(shareIntent, Integer.toString(R.string.share_app));
+                        Intent intent = Intent.createChooser(shareIntent, "Share this App with:");
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         break;
