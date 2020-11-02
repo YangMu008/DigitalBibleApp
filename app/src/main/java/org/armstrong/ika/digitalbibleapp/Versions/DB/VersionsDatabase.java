@@ -8,9 +8,6 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsDoa;
-import org.armstrong.ika.digitalbibleapp.Versions.DB.VersionsEntities;
-
 import static org.armstrong.ika.digitalbibleapp.Constants.VERSION_KEY_DATABASE_NAME;
 
 @Database(version = 2, entities = {VersionsEntities.class})
@@ -19,19 +16,6 @@ public abstract class VersionsDatabase extends RoomDatabase {
     public abstract VersionsDoa versionsDoa();
 
     private static VersionsDatabase INSTANCE;
-
-//    static final Migration MIGRATION_1_2 = new Migration(1, 2) {
-//        @Override
-//        public void migrate(SupportSQLiteDatabase database) {
-//
-//            database.execSQL("BEGIN TRANSACTION;");
-//
-//            database.execSQL("DELETE FROM version_key WHERE number = 6");
-//            database.execSQL("INSERT INTO version_key (number,active,copyRight,verAbbr,transLang,verName) VALUES(6,0,0,'DN1933','dan','Bibelen på Dansk 1933')");
-//
-//            database.execSQL("COMMIT;");
-//        }
-//    };
 
     public static VersionsDatabase getInstance(final Context context) {
 
