@@ -6,4 +6,4 @@ https://play.google.com/store/apps/details?id=org.armstrong.ika.digitalbibleapp
 
 
 # Privacy Policy
-This app does not collect any information
+This app does not collect any information, or share infomation with any third parties.
